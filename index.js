@@ -9,8 +9,15 @@ const port=9000;
 //layout 
 const expressLayouts=require('express-ejs-layouts');
 
+
+//static files
+app.use(express.static('./assets'));
+
 //layouts before routing 
 app.use(expressLayouts);//don't need to call the function
+//track style and scripts from some pages into the layout
+app.set('layout extracStyles', true);
+app.set('layout  extractSCripts', true);
 
 //user express router
 app.use('/', require('./routes')); 
