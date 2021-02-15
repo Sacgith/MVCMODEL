@@ -5,7 +5,7 @@ const app=express();
 const port=9000;
 
 //user express router
-app.use('/', require('./routes'));
+app.use('/', require('./routes')); 
 
 
 //set up the view engine
