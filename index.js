@@ -10,6 +10,9 @@ const port=9000;
 const expressLayouts=require('express-ejs-layouts');
 
 
+//mongodb
+const db=require('./config/mongoose');
+
 //static files
 app.use(express.static('./assets'));
 
