@@ -10,6 +10,14 @@ console.log("Router Loaded");
 
 //controller
 router.get('/', homeController.home);
+//users controller and routerr
+//this will access to this route and will automatically 
+//access by main server.js through
+router.use('/users', require('./users'));
+
+//for any further routes, access frmom here 
+
+//router.user('/routerName', require('./routerfile'));
 
 
 module.exports=router;
