@@ -8,6 +8,13 @@ const port=9000;
 app.use('/', require('./routes'));
 
 
+//set up the view engine
+app.set('view engine' , 'ejs');
+//path.join(_dirname, foldername=>view);
+app.set('veiw', './views');
+
+
+
 
 app.listen(port,function(err)
 {   
