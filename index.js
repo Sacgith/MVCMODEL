@@ -19,8 +19,8 @@ app.use(express.static('./assets'));
 //layouts before routing 
 app.use(expressLayouts);//don't need to call the function
 //track style and scripts from some pages into the layout
-app.set('layout extracStyles', true);
-app.set('layout  extractSCripts', true);
+app.set("layout extractStyles", true);
+app.set('layout extractScripts', true);
 
 //user express router
 app.use('/', require('./routes')); 

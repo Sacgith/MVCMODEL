@@ -1,6 +1,10 @@
 
 body{
     margin:0;
-    color:red;
-    background-color: aqua;
+    font-size: 30px;
+   
+   
+}
+html{
+    font-size: 3 rem;
 }
