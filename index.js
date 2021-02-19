@@ -1,17 +1,25 @@
 const express=require('express');
+
+const cookieParser=require('cookie-parser');
+
+
 const expressEjsLayouts = require('express-ejs-layouts');
 
 const app=express();
 
 const port=9000;
-
-
 //layout 
 const expressLayouts=require('express-ejs-layouts');
 
 
 //mongodb
 const db=require('./config/mongoose');
+
+
+//cookies need to be parsed
+//reading throug the post request 
+app.use(express.urlencoded);
+app.use(cookieParser);
 
 //static files
 app.use(express.static('./assets'));
@@ -30,9 +38,6 @@ app.use('/', require('./routes'));
 app.set('view engine' , 'ejs');
 //path.join(_dirname, foldername=>view);
 app.set('veiw', './views');
-
-
-
 
 app.listen(port,function(err)
 {   
