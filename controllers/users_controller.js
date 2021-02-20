@@ -29,13 +29,13 @@ module.exports.signIn= function (req, res) {
 
 
 //get the sign up data 
-module.exports.create=function(req, res)
-{
-    //todo later
-}
+// module.exports.create=function(req, res)
+// {
+//     //todo later
+// }
 
 //sign in and screat a session for the user
-module.exports.createSession=function(req, res)
-{
-   //toto later
-}
+// module.exports.createSession=function(req, res)
+// {
+//    //toto later
+// }
