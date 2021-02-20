@@ -21,7 +21,7 @@ const db=require('./config/mongoose');
 app.use(express.urlencoded({
     extended:true
 }));
-// app.use(cookieParser);
+//  app.use(cookieParser);
 
 //static files
 app.use(express.static('./assets'));
