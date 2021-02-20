@@ -15,6 +15,15 @@ const expressLayouts=require('express-ejs-layouts');
 //mongodb
 const db=require('./config/mongoose');
 
+//passport seesion
+const session=require('express-session');
+const passport = require('./config/passport-local-strategy');
+const passportLocal=require('./config/passport-local-strategy');
+const { Session } = require('express-session');
+//permanent store
+const MongoStore=require('connect-mongo')(session);
+
+
 
 //cookies need to be parsed
 //reading throug the post request 
@@ -32,14 +41,42 @@ app.use(expressLayouts);//don't need to call the function
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-//user express router
-app.use('/', require('./routes')); 
 
 
 //set up the view engine
 app.set('view engine' , 'ejs');
 //path.join(_dirname, foldername=>view);
 app.set('views', './views');
+
+
+//mongo store is used to store the session cookie in the db
+app.use(session({
+
+   name:'codeial',
+   //todo change the secret before deployment in production mode
+   secret:'blahsomething',
+   saveUninitialized: false,
+   resave: false,
+   cookie: {
+       maxAge:(1000*60*100)
+   }, 
+   store: new MongoStore({
+       //db
+       mongooseConnection:db,
+       autoRemove:'disabled'
+   }, function(err){
+       console.log(err||'connet-mongodb setup ok');
+   }),
+
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+//iska dekh liyo yaar ek baar
+app.use(passport.setAuthenticatedUser);
+
+//user express router
+app.use('/', require('./routes')); 
+
 
 app.listen(port,function(err)
 {   
