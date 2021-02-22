@@ -15,6 +15,10 @@ router.get('/', homeController.home);
 //access by main server.js through
 router.use('/users', require('./users'));
 
+
+//posts
+router.use('/posts', require('./post'));
+
 //for any further routes, access frmom here 
 
 //router.user('/routerName', require('./routerfile'));
