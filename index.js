@@ -23,8 +23,16 @@ const { Session } = require('express-session');
 //permanent store
 const MongoStore=require('connect-mongo')(session);
 
-
-
+//sass
+const sassMiddleware=require('node-sass-middleware');
+//just before server starts
+app.use(sassMiddleware({
+    src:'./assets/scss',
+    dest:'./assets/css',
+    debug:true,
+    outputStyle:'extended',
+    prefix:'/css'
+}))
 //cookies need to be parsed
 //reading throug the post request 
 app.use(express.urlencoded({
@@ -61,11 +69,11 @@ app.use(session({
        maxAge:(1000*60*100)
    }, 
    store: new MongoStore({
-       //db
+       //db   
        mongooseConnection:db,
        autoRemove:'disabled'
    }, function(err){
-       console.log(err||'connet-mongodb setup ok');
+       console.log(err||'connect-mongodb setup ok');
    }),
 
 }));

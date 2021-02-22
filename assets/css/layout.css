@@ -1,10 +1,9 @@
+body {
+  margin: 0;
+  font-size: 30px;
+  background-color: lightblue; }
+  body #layout-main {
+    height: 100vh; }
 
-body{
-    margin:0;
-    font-size: 30px;
-   
-   
-}
-html{
-    font-size: 3 rem;
-}
+html {
+  font-size: 3 rem; }

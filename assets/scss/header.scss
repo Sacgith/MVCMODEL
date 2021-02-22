@@ -1,0 +1,19 @@
+header{
+    display:  flex;
+    background-color: aqua;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:  center;
+     ul{
+         display:  flex;
+         list-style: none;
+     
+         justify-content: space-between;
+         a{
+             text-decoration: none;
+             margin-left: 20px;
+                 float: right;
+             
+         }
+     }
+}

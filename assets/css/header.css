@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  background-color: aqua;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+  header ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between; }
+    header ul a {
+      text-decoration: none;
+      margin-left: 20px;
+      float: right; }
