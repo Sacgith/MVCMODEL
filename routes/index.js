@@ -19,6 +19,10 @@ router.use('/users', require('./users'));
 //posts
 router.use('/posts', require('./post'));
 
+
+//comments
+router.use('/comments', require('./comments'));
+
 //for any further routes, access frmom here 
 
 //router.user('/routerName', require('./routerfile'));
