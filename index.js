@@ -7,7 +7,6 @@ const expressEjsLayouts = require('express-ejs-layouts');
 
 const app=express();
 
-
 //layout 
 const expressLayouts=require('express-ejs-layouts');
 
